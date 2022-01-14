@@ -1,0 +1,150 @@
+:root{
+    --primary-color: #4484ce;
+    --secondary-color:#e6e6e6;
+    --ternary-color:#f9cf00;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--secondary-color);
+
+}
+
+header{
+    color: white;
+    background-color: var(--primary-color);
+    padding: 1em 3em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1{
+    white-space: nowrap;
+}
+
+header input{
+    margin: 1em 0;
+    background-color: black;
+    color: white;
+    font-size: 1em;
+}
+
+input::placeholder{
+    color: white;
+}
+
+
+#search, .search-btn{
+    padding: 0.5em;
+    border-radius: 0.8em;
+    border: unset;
+    outline: none;
+    
+}
+
+.search-btn{
+    cursor: pointer;
+}
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.movie{
+    background-color: var(--primary-color);
+    margin: 1em;
+    width: 20em;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.485);
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-info{
+    /* background-color: var(--primary-color); */
+    padding: 2em 1em ;
+    color: white;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    gap: 0.2rem;
+}
+
+
+.movie span{
+    background-color: black;
+    color: black;
+    margin-top: 0.2em;
+    padding: 0.5em 0.5em;
+    font-weight: bold;
+}
+
+img{
+    width: 100%;
+}
+
+.overview{
+    background-color: white;
+    padding: 1em;
+    font-size: 1.2em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-height: 100%;
+    position: absolute;
+    overflow-y: auto;
+    transform: translateY(101%);
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
+
+/* .overview h3{
+    padding: 0 0 1em 0;
+} */
+
+.movie-info span.green{
+    color: lightgreen;
+}
+
+.movie-info span.orange{
+    color: orange;
+}
+
+.movie-info span.red{
+    color: red;
+}
+
+@media screen and (max-width: 480px){
+    header{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 240px){
+    /* header{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } */
+
+    body, input{
+        font-size: 0.5em;
+    }
+
+    input{
+        width: 100%;
+        font-size: 0.1em;
+    }
+}
